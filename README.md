@@ -31,10 +31,10 @@ trainer = EmbeddingModelTrainer(
 trainer.load_and_generate_dataset(verbose=True)
 
 #Fine-tune the model using the dataset
-trainer.fine_tune_model()
+trainer.fit()
 
 #Finally, transform a query using the fine-tuned model
-query_embedding = trainer.transform(query)
+transformed_query_embedding = trainer.transform(query)  
 
 ```
 ## Overview

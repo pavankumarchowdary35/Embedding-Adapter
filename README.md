@@ -2,7 +2,7 @@
 
 ## 📜 Description
 
-embedding-ada is a Python package used to fine-tune embedding adapters on top of embedding models from Hugging Face and OpenAI. The package is build using Llama-Index.
+embedding-ada is a Python package used to fine-tune embedding adapters on top of embedding models from Hugging Face and OpenAI. This package is build using Llama-Index.
 
 ## Why Use Embedding-Ada?
 Improved Retrieval Performance: By fine-tuning adapters, this package helps you bring relevant documents closer to the query embeddings, improving the results of approximate nearest neighbor searches.
@@ -39,7 +39,7 @@ query_embedding = trainer.transform(query)
 ```
 ## Overview
 
-The user-provided text is parsed into nodes, with each node representing a "chunk" of a source document. Using a language model (LLM), we generate a question from each node. This process forms query-context pairs, which are then used to train a neural network model. The default model is a simple two-layer neural network with ReLU activation and a residual layer at the end. Users also have the option to define a custom neural network as the adapter model and train it with the formulated query-context pairs.
+The user has to provide text on which he want to trian the adapter model. The text can be in either .pdf or .txt files. This text is parsed into nodes, with each node representing a "chunk" of a source document. Using a language model (LLM), we generate a question from each node. This process forms query-context pairs, which are then used to train a neural network model. The default model is a simple two-layer neural network with ReLU activation and a residual layer at the end. Users also have the option to define a custom neural network as the adapter model and train it with the formulated query-context pairs.
 
 ## Training Process
 
@@ -47,15 +47,15 @@ The training process uses the MultipleNegativesRankingLoss function, similar to 
 
 ## Embedding Adapters
 
-The core concept behind embedding adapters is as follows: Given a set of query embeddings, and corresponding sets of relevant and irrelevant document embeddings for each query, the model learns a transformation that adjusts the vector space. This transformation "squeezes" and "rotates" the space, mapping it to a new space where relevant documents are closer to the query. We refer to this transformation as an 'adapter,' as it is applied after the output of the embedding model.
+The core concept behind embedding adapters is as follows: Given a set of query embeddings, and corresponding sets of relevant and irrelevant document embeddings for each query, the adapter model learns a transformation that adjusts the vector space. This transformation "squeezes" and "rotates" the space, mapping it to a new space where relevant documents are closer to the query. We refer to this transformation as an 'adapter,' as it is applied after the output of the embedding model.
 
 ## RAG Use Case
 
 Consider a scenario where you have a large corpus of text, and you want to build a Q&A system on that corpus. The initial step involves splitting the text corpus into chunks, converting these chunks into embeddings, and storing them in a vector database.
 
-When a user makes a query, the goal is to retrieve text chunks from the vector database that are relevant to the query. Vector databases like Chroma or Pinecone utilize Approximate Nearest Neighbors (ANN) algorithms, such as HNSW, to fetch approximate nearest neighbors to the query embedding.
+When a user makes a query, the goal is to retrieve text chunks from the vector database that are relevant to the query. Vector databases utilize Approximate Nearest Neighbors (ANN) algorithms, such as HNSW, to fetch approximate nearest neighbors to the query embedding.
 
-Instead of performing an ANN search with the original query, you perform the search with the transformed query (transformed using the trained adapter model). The results are significantly better because the transformed query embeddings are designed to be closer to the relevant text chunks.
+Instead of performing an ANN search with the original query, you perform the search with the transformed query (transformed using the trained adapter model). The results are significantly better because the transformed query embeddings are intended to be closer to the relevant text chunks.
 
 
 # 📄License

@@ -3,9 +3,10 @@ from typing import Any, List, Optional, Tuple, Type, cast
 
 from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.core.utils import infer_torch_device
-from adapter_embedding import AdapterEmbeddingModel
-from base_finetune_engine import BaseEmbeddingFinetuneEngine
-from synthetic_dataset import EmbeddingQAFinetuneDataset
+from embedding_ada.adapter_embedding import AdapterEmbeddingModel
+from embedding_ada.base_finetune_engine import BaseEmbeddingFinetuneEngine
+from embedding_ada.synthetic_dataset import EmbeddingQAFinetuneDataset
+from embedding_ada.two_layer_cnn import TwoLayerNN 
 
 logger = logging.getLogger(__name__)
 

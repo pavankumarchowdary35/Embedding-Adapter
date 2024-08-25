@@ -51,6 +51,7 @@ class AdapterEmbeddingModel(BaseEmbedding):
         import torch
 
         from llama_index.legacy.embeddings.adapter_utils import BaseAdapter, LinearLayer
+        from embedding_ada.two_layer_cnn import TwoLayerNN 
 
         if device is None:
             device = infer_torch_device()

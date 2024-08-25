@@ -1,21 +1,21 @@
-# 🎉 embedding_ada
+# 🎉 embedding-ada
 
 ## 📜 Description
 
-embedding-ada is a Python package used to fine-tune embedding adapters on top of embedding models from Hugging Face and OpenAI. This package is build using Llama-Index.
+embedding-ada is a Python package used to fine-tune embedding adapter on top of embedding models from Hugging Face and OpenAI. This package is build using Llama-Index.
 
-## Why Use Embedding-Ada?
+## Why Use embedding-ada?
 Improved Retrieval Performance: By fine-tuning adapters, this package helps you bring relevant documents closer to the query embeddings, improving the results of approximate nearest neighbor searches.
 
 ## 🚀 Installation
-You can install **embedding_ada** directly from PyPI using pip:
+You can install **embedding-ada** directly from PyPI using pip:
 
 ```bash
-pip install embedding_ada
+pip install embedding-ada
 ```
 ## 💻 Usage
 ```python
-from embedding_ada.adapter import EmbeddingModelTrainer
+from embedding-ada.adapter import EmbeddingModelTrainer
 # Define your training files
 train_files = ["path/to/your/example.pdf"]
 

@@ -1,11 +1,11 @@
 import os
-from synthetic_dataset import load_corpus, generate_trian_pairs, EmbeddingQAFinetuneDataset, load_existing_data
-from embedding_model import resolve_embed_model
-from fine_tune_engine import EmbeddingAdapterFinetuneEngine
-from adapter_embedding import AdapterEmbeddingModel
+from embedding_ada.synthetic_dataset import load_corpus, generate_trian_pairs, EmbeddingQAFinetuneDataset, load_existing_data
+from embedding_ada.embedding_model import resolve_embed_model
+from embedding_ada.fine_tune_engine import EmbeddingAdapterFinetuneEngine
+from embedding_ada.adapter_embedding import AdapterEmbeddingModel
 from llama_index.llms.azure_openai import AzureOpenAI
 from llama_index.llms.openai import OpenAI
-from two_layer_cnn import TwoLayerNN 
+from embedding_ada.two_layer_cnn import TwoLayerNN 
 
 class EmbeddingModelTrainer:
     def __init__(self, embedding_model_name: str, train_files: list, model_output_path: str = "model_output_test", epochs: int = 10, llm_type: str = "openai", adapter_model=None):
@@ -65,7 +65,7 @@ class EmbeddingModelTrainer:
             adapter_model=self.adapter_model
         )
         self.finetune_engine.finetune()
-        self.embed_model = self.finetune_engine.get_finetuned_model()
+        self.embed_model = self.finetune_engine.get_finetuned_model(adapter_cls=TwoLayerNN)
 
     def transform(self, query: str):
         """Transform a query using the fine-tuned model."""

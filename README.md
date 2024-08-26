@@ -15,7 +15,7 @@ pip install embedding-ada
 ```
 ## 💻 Usage
 ```python
-from embedding-ada.adapter import EmbeddingModelTrainer
+from embedding_ada.adapter import EmbeddingModelTrainer
 # Define your training files
 train_files = ["path/to/your/example.pdf"]
 
@@ -34,7 +34,7 @@ trainer.load_and_generate_dataset(verbose=True)
 trainer.fit()
 
 #Finally, transform a query using the fine-tuned model
-transformed_query_embedding = trainer.transform(query)  
+transformed_query_embedding = trainer.transform('query_text')  
 
 ```
 ## Overview

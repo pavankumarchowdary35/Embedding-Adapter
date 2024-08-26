@@ -13,7 +13,7 @@ You can install **embedding-ada** directly from PyPI using pip:
 ```bash
 pip install embedding-ada
 ```
-You can find more details on the PyPI page- [text](https://pypi.org/project/embedding-ada/)
+You can find more details on the PyPI page- [link](https://pypi.org/project/embedding-ada/)
 
 ## 💻 Usage
 ```python

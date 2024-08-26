@@ -9,6 +9,7 @@ llama-index-embeddings-langchain
 llama-index-embeddings-openai
 llama-index-finetuning
 llama-index-llms-azure-openai
+llama-index-embeddings-azure-openai
 llama-index-llms-openai
 openai
 pydantic
